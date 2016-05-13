@@ -1,0 +1,23 @@
+{
+  "name": "br-mario-marathon-donation-server",
+  "version": "1.0.0",
+  "description": "This is a tiny little HTTP API server for the Battle Royale Mario Marathon to enable creating donations in Twitch Alerts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mustack/br-mario-marathon-donation-server.git"
+  },
+  "author": "Jean-Luc Martin (Mustack)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mustack/br-mario-marathon-donation-server/issues"
+  },
+  "homepage": "https://github.com/Mustack/br-mario-marathon-donation-server#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "simple-oauth2": "^0.7.0"
+  }
+}
