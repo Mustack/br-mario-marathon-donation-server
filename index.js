@@ -3,16 +3,16 @@ var express = require('express'),
 
 
 var oauth2 = require('simple-oauth2')({
-  clientID: CLIENT_ID,
-  clientSecret: CLIENT_SECRET,
-  site: 'https://github.com/login',
-  tokenPath: '/oauth/access_token',
+  clientID: bHzFQdixXXbZNU7Mzwj14Zki8yPOrxKxAvxm3EpW,
+  clientSecret: dofc3DKJJDh7FusT3SLmLHwzKlxtrsOmwxha5ISO,
+  site: 'http://www.twitchalerts.com/',
+  tokenPath: '/api/v1.0/token',
   authorizationPath: '/oauth/authorize'
 });
 
 // Authorization uri definition
 var authorization_uri = oauth2.authCode.authorizeURL({
-  redirect_uri: 'http://localhost:3000/callback',
+  redirect_uri: 'https://br-mario-marathon.herokuapp.com/callback',
   scope: 'notifications',
   state: '3(#0/!~'
 });
@@ -28,7 +28,7 @@ app.get('/callback', function (req, res) {
 
   oauth2.authCode.getToken({
     code: code,
-    redirect_uri: 'http://localhost:3000/callback'
+    redirect_uri: 'https://br-mario-marathon.herokuapp.com/callback'
   }, saveToken);
 
   function saveToken(error, result) {
@@ -38,7 +38,7 @@ app.get('/callback', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-  res.send('Hello<br><a href="/auth">Log in with Github</a>');
+  res.send('Hello<br><a href="/auth">Log in with Twitch Alerts</a>');
 });
 
 app.listen(3000);
