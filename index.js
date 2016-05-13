@@ -47,9 +47,9 @@ app.get('/', function (req, res) {
 
 app.get('/donation', (req, res) => {
   var data = req.query;
-  data.access_token = token;
+  data.access_token = token.access_token;
   data = JSON.stringify(data);
-  
+
   console.log('sending donation:', data);
 
   var options = {
