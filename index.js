@@ -78,7 +78,7 @@ app.get('/donation', (req, res) => {
   // var request = new http.ClientRequest(options, callback);
   // request.end(data);
 
-  request(options, (err, res, body) => {console.log(res)});
+  request(options, (err, res, body) => {console.log(res, body)});
 
   res.send(200);
 });
