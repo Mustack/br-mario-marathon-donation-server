@@ -35,6 +35,9 @@ app.get('/callback', function (req, res) {
 
   function saveToken(error, result) {
     if (error) { console.log('Access Token Error', error.message); }
+
+    console.log('aquired token: ', token);
+
     token = oauth2.accessToken.create(result);
   }
 
@@ -47,7 +50,7 @@ app.get('/', function (req, res) {
 
 app.get('/donation', (req, res) => {
   var data = req.query;
-  data.access_token = token.access_token;
+  data.access_token = token.token.access_token;
   data = JSON.stringify(data);
 
   console.log('sending donation:', data);
