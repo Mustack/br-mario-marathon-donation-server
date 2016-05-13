@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express();
-var http = require('http');
+var request = require('request');
 var token = '';
 
 
@@ -51,36 +51,34 @@ app.get('/', function (req, res) {
 app.get('/donation', (req, res) => {
   var data = req.query;
   data.access_token = token.token.access_token;
-  data = JSON.stringify(data);
 
   console.log('sending donation:', data);
 
   var options = {
-    hostname: 'www.twitchalerts.com',
-    port: 80,
-    path: '/api/v1.0/donations',
+    hostname: 'https://www.twitchalerts.com/api/v1.0/donations',
     method: 'POST',
-    headers: {
-        "Content-Length": Buffer.byteLength(data)
-    }
+    json: true,
+    body: JSON.stringify(data)
   };
 
-  callback = function(response) {
-    var str = '';
+  // callback = function(response) {
+  //   var str = '';
+  //
+  //   //another chunk of data has been recieved, so append it to `str`
+  //   response.on('data', function (chunk) {
+  //     str += chunk;
+  //   });
+  //
+  //   //the whole response has been recieved, so we just print it out here
+  //   response.on('end', function () {
+  //     console.log(str);
+  //   });
+  // }
+  //
+  // var request = new http.ClientRequest(options, callback);
+  // request.end(data);
 
-    //another chunk of data has been recieved, so append it to `str`
-    response.on('data', function (chunk) {
-      str += chunk;
-    });
-
-    //the whole response has been recieved, so we just print it out here
-    response.on('end', function () {
-      console.log(str);
-    });
-  }
-
-  var request = new http.ClientRequest(options, callback);
-  request.end(data);
+  request(options, (err, res, body) => {console.log(res)});
 
   res.send(200);
 });
