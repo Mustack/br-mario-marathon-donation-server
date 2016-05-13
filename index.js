@@ -7,7 +7,7 @@ var oauth2 = require('simple-oauth2')({
   clientSecret: 'dofc3DKJJDh7FusT3SLmLHwzKlxtrsOmwxha5ISO',
   site: 'http://www.twitchalerts.com/',
   tokenPath: 'api/v1.0/token',
-  authorizationPath: 'oauth/authorize'
+  authorizationPath: '/api/v1.0/authorize'
 });
 
 // Authorization uri definition
