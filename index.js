@@ -13,7 +13,8 @@ var oauth2 = require('simple-oauth2')({
 // Authorization uri definition
 var authorization_uri = oauth2.authCode.authorizeURL({
   redirect_uri: 'https://br-mario-marathon.herokuapp.com/callback',
-  scope: 'donations.create'
+  scope: 'donations.create',
+  state: '3(#0/!~'
 });
 
 // Initial page redirecting to Github
