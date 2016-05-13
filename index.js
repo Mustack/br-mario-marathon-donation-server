@@ -35,6 +35,8 @@ app.get('/callback', function (req, res) {
     if (error) { console.log('Access Token Error', error.message); }
     token = oauth2.accessToken.create(result);
   }
+
+  res.send(200);
 });
 
 app.get('/', function (req, res) {
