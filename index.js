@@ -41,6 +41,6 @@ app.get('/', function (req, res) {
   res.send('Hello<br><a href="/auth">Log in with Twitch Alerts</a>');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 console.log('Express server started on port 3000');
