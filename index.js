@@ -61,7 +61,6 @@ app.get('/donation', (req, res) => {
     path: '/api/v1.0/donations',
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json',
         "Content-Length": Buffer.byteLength(data)
     }
   };
