@@ -1,5 +1,7 @@
 var express = require('express'),
     app = express();
+var http = require('http');
+var token = '';
 
 
 var oauth2 = require('simple-oauth2')({
@@ -41,6 +43,29 @@ app.get('/callback', function (req, res) {
 
 app.get('/', function (req, res) {
   res.send('Hello<br><a href="/auth">Log in with Twitch Alerts</a>');
+});
+
+app.get('/donation', (req, res) => {
+  var data = JSON.stringify(req.query);
+  data.access_token = token;
+
+  console.log('sending donation:', data);
+
+  var options = {
+    hostname: 'www.twitchalerts.com',
+    port: 80,
+    path: '/api/v1.0/donations',
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        "Content-Length": Buffer.byteLength(data)
+    }
+  };
+
+  var request = new http.ClientRequest(options);
+  request.end(data);
+
+  res.send(200);
 });
 
 app.listen(process.env.PORT || 3000);
