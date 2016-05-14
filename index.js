@@ -55,7 +55,7 @@ app.get('/donation', (req, res) => {
   console.log('sending donation:', data);
 
   var options = {
-    hostname: 'https://www.twitchalerts.com/api/v1.0/donations',
+    uri: 'https://www.twitchalerts.com/api/v1.0/donations',
     method: 'POST',
     json: true,
     form: data
