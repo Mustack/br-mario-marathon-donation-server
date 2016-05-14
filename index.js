@@ -63,7 +63,7 @@ app.get('/donation', (req, res) => {
     form: data
   };
 
-  request(options, (err, res, body) => {console.log(err, res, body)});
+  request(options, (err, res, body) => {console.log(err, body)});
 
   res.send(200);
 });
