@@ -7,8 +7,8 @@ var token = '';
 
 
 var oauth2 = require('simple-oauth2')({
-  clientID: 'bHzFQdixXXbZNU7Mzwj14Zki8yPOrxKxAvxm3EpW',
-  clientSecret: 'dofc3DKJJDh7FusT3SLmLHwzKlxtrsOmwxha5ISO',
+  clientID: '4rITkWzmvUPtBU4o4JVGQ0EE0YjEQkZ2zGTUg2oo',
+  clientSecret: 'aH31SUOomyEzO7MwooqFhqFicXrbg5z5jVOSQDnK',
   site: 'http://www.twitchalerts.com/',
   tokenPath: 'api/v1.0/token',
   authorizationPath: 'api/v1.0/authorize'
