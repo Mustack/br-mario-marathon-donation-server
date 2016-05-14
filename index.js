@@ -1,5 +1,7 @@
 var express = require('express'),
     app = express();
+
+var cors = require('cors'); app.use(cors());
 var request = require('request');
 var token = '';
 
