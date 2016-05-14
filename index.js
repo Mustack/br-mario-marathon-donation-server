@@ -58,25 +58,8 @@ app.get('/donation', (req, res) => {
     hostname: 'https://www.twitchalerts.com/api/v1.0/donations',
     method: 'POST',
     json: true,
-    body: JSON.stringify(data)
+    form: data
   };
-
-  // callback = function(response) {
-  //   var str = '';
-  //
-  //   //another chunk of data has been recieved, so append it to `str`
-  //   response.on('data', function (chunk) {
-  //     str += chunk;
-  //   });
-  //
-  //   //the whole response has been recieved, so we just print it out here
-  //   response.on('end', function () {
-  //     console.log(str);
-  //   });
-  // }
-  //
-  // var request = new http.ClientRequest(options, callback);
-  // request.end(data);
 
   request(options, (err, res, body) => {console.log(res, body)});
 
