@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is a tiny little HTTP API server for the Battle Royale Mario Marathon to enable creating donations in Twitch Alerts.",
   "main": "index.js",
+  "engines": {
+    "node": "8.1.4"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
