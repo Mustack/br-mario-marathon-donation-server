@@ -1,5 +1,9 @@
-var express = require('express'),
-    app = express();
+var express = require('express');
+const morgan = require('morgan');
+
+
+app = express();
+app.use(morgan('dev'));
 
 var cors = require('cors'); app.use(cors());
 var request = require('request');
